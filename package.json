@@ -1,0 +1,38 @@
+{
+  "name": "fuzzracer",
+  "version": "1.0.0",
+  "description": "Benchmarking for various fuzzy search algorithms.",
+  "dependencies": {
+    "loglevel": "^1.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "mocha -r jsdom-global/register -r babel-core/register test/setup.js test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aguynamedben/fuzzracer.git"
+  },
+  "keywords": [
+    "search",
+    "fuzzy",
+    "autocomplete",
+    "highlight",
+    "advanced",
+    "fast",
+    "benchmarking"
+  ],
+  "author": "Ben Standefer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aguynamedben/fuzzracer/issues"
+  },
+  "homepage": "https://github.com/aguynamedben/fuzzracer"
+}
