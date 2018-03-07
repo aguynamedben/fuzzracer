@@ -3,10 +3,10 @@ import log from 'loglevel';
 
 import IndexStore from '../../src/IndexStore';
 
-describe('IndexStore', () => {
-  describe('static methods', () => {
-    describe('IndexStore._select3', () => {
-      it('returns values', () => {
+describe('IndexStore', function() {
+  describe('static methods', function() {
+    describe('IndexStore._select3', function() {
+      it('returns values', function() {
         const helloResult = IndexStore._select3('hello', Infinity, [], {});
         const expectedHelloResult = ['hel', 'heo', 'hll', 'hlo', 'ell', 'elo', 'llo'];
         expect(helloResult).to.eql(expectedHelloResult);
@@ -25,10 +25,10 @@ describe('IndexStore', () => {
     });
   });
 
-  context('with items indexed', () => {
+  context('with items indexed', function() {
     let store;
 
-    beforeEach(() => {
+    beforeEach(function() {
       store = new IndexStore();
       store.add("hello");
       store.add("cello");
@@ -39,7 +39,7 @@ describe('IndexStore', () => {
       store.add("hells");
     });
 
-    it('adds items to indiciesForKey correctly', () => {
+    it('adds items to indiciesForKey correctly', function() {
       //log.info(store.indicesForKey);
 
       expect(store.indicesForKey.hil).to.eql([3, 4, 5]);
@@ -47,7 +47,7 @@ describe('IndexStore', () => {
       expect(store.indicesForKey.lls).to.eql([5, 6]);
     });
 
-    it('allow searching', () => {
+    it('allow searching', function() {
       expect(store.search('shill')).to.eql(['shill']);
 
       expect(store.search('shell')).to.eql(['shall', 'shill', 'hello', 'hells']);
@@ -66,4 +66,3 @@ describe('IndexStore', () => {
     });
   });
 });
-
